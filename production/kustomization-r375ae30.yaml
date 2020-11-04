@@ -1,0 +1,15 @@
+resources:
+- ../base
+- env-ops-configmap.yaml
+- r375ae30/configmap.yaml
+
+patches:
+- path: traffic-routing.yaml
+  target:
+    kind: Service
+- path: r375ae30/revision-patch.yaml
+  target:
+    kind: Service
+- path: r375ae30/routing-patch.yaml
+  target:
+    kind: Service
